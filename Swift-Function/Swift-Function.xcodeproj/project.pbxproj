@@ -36,6 +36,7 @@
 		E78874721A1998EB00834C58 /* Swift-FunctionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-FunctionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78874771A1998EB00834C58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E78874781A1998EB00834C58 /* Swift_FunctionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_FunctionTests.swift; sourceTree = "<group>"; };
+		E78874821A19C61F00834C58 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +80,7 @@
 			children = (
 				E78874621A1998EB00834C58 /* AppDelegate.swift */,
 				E78874641A1998EB00834C58 /* ViewController.swift */,
+				E78874821A19C61F00834C58 /* MyPlayground.playground */,
 				E78874661A1998EB00834C58 /* Main.storyboard */,
 				E78874691A1998EB00834C58 /* Images.xcassets */,
 				E788746B1A1998EB00834C58 /* LaunchScreen.xib */,
