@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CD990909-3B04-4AFA-B3B5-136E04D55181</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Swift-协议</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>665D5271E0B784630BFC84381F9A9017FC47D229</key>
+		<string>https://github.com/wangqianjun/SwiftAdvance.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Swift-协议/Swift-协议.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>665D5271E0B784630BFC84381F9A9017FC47D229</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/wangqianjun/SwiftAdvance.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>665D5271E0B784630BFC84381F9A9017FC47D229</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>665D5271E0B784630BFC84381F9A9017FC47D229</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SwiftAdvance</string>
+		</dict>
+	</array>
+</dict>
+</plist>
