@@ -156,7 +156,43 @@ class SomeSubClass: SomeSuperClass, SomeProtocol {
 }
 
 //===============================6 协议类型 Protocol as Types
+/*
+尽管协议本身并不实现任何功能，但是协议可被当做类型来使用。
+使用场景：
+1）协议类型作为函数、方法或构造器中得参数类型或返回值类型
+2）协议类型作为常量、变量或属性的类型
+3）协议类型作为数组、字典或其他容器中元素类型
+*/
+
+class Dice {
+    let sides: Int
+    let generator: RandomNumberGenerator
+    
+    // generator 被认为是遵循了 RandomNumberGenerator 的类型
+    init(sides: Int, generator: RandomNumberGenerator) {
+        self.sides = sides
+        self.generator = generator // 协议类型
+    }
+    
+    func roll() -> Int {
+        return Int(generator.random() * Double(sides)) + 1
+    }
+    
+}
+
+func protocolAsTypes() {
+    var d6 = Dice(sides: 6, generator: LinearCongruentialGenerator())
+    for _ in 0...5 {
+        println("Random dice roll is \(d6.roll())")
+    }
+}
+
 //===============================7 委托模式 Delegation
+/*
+委托是一种设计模式，它允许类或结构体将一些需要他们负责的功能交由（委托）给其他的类型的实例
+委托模式的实现很简单： 定义协议来封装那些需要被委托的函数和方法，使其遵循着拥有这些被委托的函数和方法
+*/
+
 //===============================8 在扩展中添加协议成员 Adding Protocol Adoption With an Extension
 //===============================9 通过扩展补充协议声明 Declaring Protocol Adoption With an Extension
 //===============================10 集合中协议类型 Collections of Protocol Types
