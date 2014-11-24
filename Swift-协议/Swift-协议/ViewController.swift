@@ -12,7 +12,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        propertRequirement()
+//        propertRequirement()
+//        delegation()
+        addingProtocolAdoptionWithAnEx()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -193,8 +195,125 @@ func protocolAsTypes() {
 委托模式的实现很简单： 定义协议来封装那些需要被委托的函数和方法，使其遵循着拥有这些被委托的函数和方法
 */
 
+protocol DiceGame {
+    var dice: Dice { get }
+    func play()
+}
+
+protocol DiceGameDelegate {
+    func gameDidStart(game: DiceGame)
+    func game(game: DiceGame, didStartNewTurnWithDiceRoll diceRoll: Int)
+    func gameDidEnd(game: DiceGame)
+}
+
+class SnakeAndLadders: DiceGame {
+    let finalSquare = 25;
+    let dice = Dice(sides: 6, generator: LinearCongruentialGenerator())
+    var square = 0
+    var board: [Int]
+    
+    init() {
+        board = Array(count: finalSquare + 1, repeatedValue: 0)
+        board[03] = +08
+        board[06] = +11
+        board[09] = +09
+        board[10] = +02
+        board[14] = -10
+        board[19] = -11
+        board[22] = -02
+        board[24] = -08
+    }
+    
+    var delegate: DiceGameDelegate?
+    func play() {
+        square = 0
+        delegate?.gameDidStart(self)
+        
+        // 带标签的语句（gameloop - 标签）
+        gameLoop: while square != finalSquare {
+            let diceRoll = dice.roll()
+            delegate?.game(self, didStartNewTurnWithDiceRoll: diceRoll)
+            switch square + diceRoll {
+            case finalSquare:
+                break gameLoop
+            case let newSquare where newSquare > finalSquare:
+                continue gameLoop
+            default:
+                square += diceRoll
+                square += board[square]
+            }
+        }
+        
+        delegate?.gameDidEnd(self)
+    }
+    
+}
+
+class DiceGameTracker: DiceGameDelegate {
+    var numberOfTurns = 0
+    func gameDidStart(game: DiceGame) {
+        numberOfTurns = 0
+        if game is SnakeAndLadders {
+            println("Started a new game of Snakes and Ladders")
+        }
+        
+        println("The game is using a \(game.dice.sides) -sided dice")
+    }
+    
+    func game(game: DiceGame, didStartNewTurnWithDiceRoll diceRoll: Int) {
+        numberOfTurns++
+        println("Rolled a \(diceRoll)")
+    }
+    
+    func gameDidEnd(game: DiceGame) {
+        println("The game lasted for \(numberOfTurns) turns")
+    }
+}
+
+func delegation() {
+    let traker = DiceGameTracker()
+    var snakerAndLadder = SnakeAndLadders()
+    snakerAndLadder.delegate = traker
+    snakerAndLadder.play()
+}
+
 //===============================8 在扩展中添加协议成员 Adding Protocol Adoption With an Extension
+protocol TextRepresentable {
+    func asText() -> String
+}
+
+extension Dice: TextRepresentable {
+    func asText() -> String {
+        return "A \(sides) -sided dice"
+    }
+}
+
+func addingProtocolAdoptionWithAnEx() {
+    let d12 = Dice(sides: 12, generator: LinearCongruentialGenerator())
+    println(d12.asText())
+}
+
+
 //===============================9 通过扩展补充协议声明 Declaring Protocol Adoption With an Extension
+/*
+当一个类型已经实现了协议中的所有要求，却没有声明时，可以通过扩展来补充协议声明
+*/
+struct Hamster {
+    var name: String
+    func asText() -> String {
+        return "A hamster named \(name)"
+    }
+}
+
+//补充声明
+extension Hamster: TextRepresentable {}
+
+func declaringProtocolAdoptionWihtEx() {
+    let simonTheHasmter = Hamster(name: "Simon")
+    let somethingTextRepresentable: TextRepresentable = simonTheHasmter
+    println(somethingTextRepresentable.asText())
+}
+
 //===============================10 集合中协议类型 Collections of Protocol Types
 //===============================11 协议的继承 Protocol Inheritance
 //===============================12 类专属协议 Class-Only Protocol
