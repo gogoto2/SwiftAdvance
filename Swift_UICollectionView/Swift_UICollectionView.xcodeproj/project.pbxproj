@@ -12,6 +12,10 @@
 		E71CFC2F1AA1640300DA3565 /* HorizontalPageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CFC2E1AA1640300DA3565 /* HorizontalPageCollectionViewController.swift */; };
 		E71CFC311AA19B9E00DA3565 /* WaterFallCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CFC301AA19B9E00DA3565 /* WaterFallCollectionViewCell.swift */; };
 		E71CFC331AA19C9900DA3565 /* HorizontalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CFC321AA19C9900DA3565 /* HorizontalCollectionViewCell.swift */; };
+		E71CFC951AA44C2300DA3565 /* WaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CFC941AA44C2300DA3565 /* WaterFallLayout.swift */; };
+		E71CFCD51AA70AC200DA3565 /* ASETransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CFCD41AA70AC200DA3565 /* ASETransition.swift */; };
+		E71CFCD71AA70B1000DA3565 /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CFCD61AA70B1000DA3565 /* Macro.swift */; };
+		E71CFCDA1AA70F1A00DA3565 /* ASETransitionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CFCD91AA70F1A00DA3565 /* ASETransitionProtocol.swift */; };
 		E7243EA31AA06F4A00AE5F44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7243EA21AA06F4A00AE5F44 /* AppDelegate.swift */; };
 		E7243EA81AA06F4A00AE5F44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7243EA61AA06F4A00AE5F44 /* Main.storyboard */; };
 		E7243EAA1AA06F4A00AE5F44 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7243EA91AA06F4A00AE5F44 /* Images.xcassets */; };
@@ -35,6 +39,10 @@
 		E71CFC2E1AA1640300DA3565 /* HorizontalPageCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalPageCollectionViewController.swift; sourceTree = "<group>"; };
 		E71CFC301AA19B9E00DA3565 /* WaterFallCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterFallCollectionViewCell.swift; sourceTree = "<group>"; };
 		E71CFC321AA19C9900DA3565 /* HorizontalCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionViewCell.swift; sourceTree = "<group>"; };
+		E71CFC941AA44C2300DA3565 /* WaterFallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterFallLayout.swift; sourceTree = "<group>"; };
+		E71CFCD41AA70AC200DA3565 /* ASETransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASETransition.swift; sourceTree = "<group>"; };
+		E71CFCD61AA70B1000DA3565 /* Macro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
+		E71CFCD91AA70F1A00DA3565 /* ASETransitionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASETransitionProtocol.swift; sourceTree = "<group>"; };
 		E7243E9D1AA06F4A00AE5F44 /* Swift_UICollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_UICollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7243EA11AA06F4A00AE5F44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7243EA21AA06F4A00AE5F44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +85,7 @@
 		E71CFC231AA15FC700DA3565 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
+				E71CFC941AA44C2300DA3565 /* WaterFallLayout.swift */,
 			);
 			name = Layout;
 			sourceTree = "<group>";
@@ -91,6 +100,8 @@
 		E71CFC251AA1613200DA3565 /* Transition */ = {
 			isa = PBXGroup;
 			children = (
+				E71CFCD41AA70AC200DA3565 /* ASETransition.swift */,
+				E71CFCD81AA70EFA00DA3565 /* Protocol */,
 			);
 			name = Transition;
 			sourceTree = "<group>";
@@ -98,6 +109,7 @@
 		E71CFC261AA1615B00DA3565 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E71CFCD61AA70B1000DA3565 /* Macro.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -109,6 +121,14 @@
 				E71CFC321AA19C9900DA3565 /* HorizontalCollectionViewCell.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		E71CFCD81AA70EFA00DA3565 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E71CFCD91AA70F1A00DA3565 /* ASETransitionProtocol.swift */,
+			);
+			name = Protocol;
 			sourceTree = "<group>";
 		};
 		E7243E941AA06F4A00AE5F44 = {
@@ -272,11 +292,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E71CFC951AA44C2300DA3565 /* WaterFallLayout.swift in Sources */,
 				E71CFC2D1AA162E300DA3565 /* NavigationViewController.swift in Sources */,
+				E71CFCD51AA70AC200DA3565 /* ASETransition.swift in Sources */,
 				E71CFC311AA19B9E00DA3565 /* WaterFallCollectionViewCell.swift in Sources */,
+				E71CFCDA1AA70F1A00DA3565 /* ASETransitionProtocol.swift in Sources */,
 				E71CFC2F1AA1640300DA3565 /* HorizontalPageCollectionViewController.swift in Sources */,
 				E7243EA31AA06F4A00AE5F44 /* AppDelegate.swift in Sources */,
 				E71CFC331AA19C9900DA3565 /* HorizontalCollectionViewCell.swift in Sources */,
+				E71CFCD71AA70B1000DA3565 /* Macro.swift in Sources */,
 				E71CFC2B1AA1623700DA3565 /* WaterFallCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
